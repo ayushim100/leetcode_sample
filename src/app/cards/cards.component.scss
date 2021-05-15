@@ -1,0 +1,57 @@
+.container{
+    padding-top: 50px;
+    padding-left: 20px;
+}
+.category{
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: black;
+    padding-bottom: 10px;
+}
+.card-row{
+    display:inline-block;
+    padding: 50px 50px;
+}
+.chalenge-card{
+    display:inline-block;
+    padding: 10px;
+    margin-right:30px;
+    border-radius: 10px;
+    height: 100px;
+    width: 8%;    
+    background: linear-gradient(#ed6e57, #db3c26);
+}
+.algorithms-card{
+    display:inline-block;
+    padding: 10px;
+    margin-right:30px;
+    border-radius: 10px;
+    height: 100px;
+    width: 100px;    
+    background:  linear-gradient(#f7dc58, #fea116);
+}
+.database-card{
+    display:inline-block;
+    padding: 10px;
+    margin-right:30px;
+    border-radius: 10px;
+    height: 100px;
+    width: 100px;    
+    background: linear-gradient(#70def7, #106afe);
+}
+.shell-card{
+    display:inline-block;
+    padding: 10px;
+    margin-right:30px;
+    border-radius: 10px;
+    height: 100px;
+    width: 100px;    
+    background:  linear-gradient(#8eeb98, #449d44);
+}
+.concurrency-card{
+    display:inline-block;
+    padding: 10px;
+    border-radius: 10px;
+    height: 100px;
+    width: 100px;    
+    background: linear-gradient(#d891c9, #8365cd);  
+}
