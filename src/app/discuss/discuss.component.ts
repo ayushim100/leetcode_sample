@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import {Iform} from './shared/form.model'
+import { FormService } from './shared/form.service';
 
 
 @Component({
@@ -10,21 +11,13 @@ import {Iform} from './shared/form.model'
 export class DiscussComponent implements OnInit {
   title:any
   description:any
-  form1 = [
-    {
-      id:1,
-      title: 'Welcome to leetcode',
-      time: '10:00 AM',
-      description: 'Here is our first form. How did you like?',
-      votes: 5 
-    }
-  ]
-  constructor() { }
+  form1!: any[];
+  constructor(private formService: FormService) {
+    
+   }
 
-  ngOnInit(): void {
-  }
-  openForm(){
-    console.log("hello");
+  ngOnInit(){
+    this.form1 = this.formService.getForms()
   }
   submit(formValues:any){
     this.form1.push(formValues)

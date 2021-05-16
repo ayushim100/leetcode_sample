@@ -6,9 +6,10 @@ import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { CardsComponent } from './cards/cards.component';
 import { DiscussComponent } from './discuss/discuss.component';
-import { FormComponent } from './form/form.component';
+
 import { FormsModule }   from '@angular/forms';
 import { FormListComponent } from './discuss/form-list/form-list.component';
+import {FormService} from './discuss/shared/form.service'
 
 @NgModule({
   declarations: [
@@ -16,7 +17,6 @@ import { FormListComponent } from './discuss/form-list/form-list.component';
     NavComponent,
     CardsComponent,
     DiscussComponent,
-    FormComponent,
     FormListComponent,
   ],
   imports: [
@@ -24,10 +24,7 @@ import { FormListComponent } from './discuss/form-list/form-list.component';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [FormService],
   bootstrap: [AppComponent],
-  entryComponents: [
-    FormComponent
-  ]
 })
 export class AppModule { }
