@@ -1,1 +1,22 @@
-<p>discuss works!</p>
+<h1> Create new topic</h1>
+<div class="container">
+    <form #DiscussForm="ngForm" (ngSubmit)="submit(DiscussForm.value)">
+        <div class ="title">
+            <label for="title">Title</label>
+            <input (ngModel)="title" name = "title" id="title" class="input" placeholder="topic" value="">
+            <button class="new-form-button" (click)="openForm()">New</button>
+        </div>
+        <div class = "description">
+            <label for="description">Description</label>
+            <input (ngModel)="description" name="description" id="description" class="text-field" placeholder="description" value="">
+        </div>
+        <button type="submit" class="btn-submit">Submit</button>
+    </form>
+    <hr>
+    <div class="row" *ngFor="let form of form1">
+        <div class="container">
+            <h4>{{form.title}}</h4>
+            <span>{{form.description}}</span>
+        </div>
+    </div>
+</div>
