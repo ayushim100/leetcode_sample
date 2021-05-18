@@ -10,7 +10,7 @@ export class QuestionService{
         return this.questions;
     }
     getQuestion(id:number){
-
+        return QUESTIONS.find(question => question.id === id)
     }
     searchQuestion(searchTerm:string, filter:string){
         var results : Question[] =[];

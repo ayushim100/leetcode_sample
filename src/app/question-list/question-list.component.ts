@@ -2,18 +2,19 @@ import { Component, OnInit, OnChanges } from '@angular/core';
 import { QuestionService } from '../discuss/shared/question.service';
 import {Question} from '../discuss/shared/question';
 import {QUESTIONS} from '../discuss/shared/questions';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-question-list',
   templateUrl: './question-list.component.html',
   styleUrls: ['./question-list.component.scss']
 })
 export class QuestionListComponent implements OnInit {
-  filterBy: string = 'all';
   visibleQuestions: Question[] = QUESTIONS;
   questions!: Question[];
   isAsc: Boolean = true;
   searchTerm: string = "";
-  constructor(private questionService: QuestionService) { }
+  index :any;
+  constructor(private questionService: QuestionService, private router: Router) { }
   searchQuestion(searchTerm: string, filter:string){
     this.visibleQuestions = this.questionService.searchQuestion(searchTerm,filter)
     // this.questionService.searchQuestion(searchTerm).subscribe((questionss: any[])=>{
@@ -32,9 +33,10 @@ export class QuestionListComponent implements OnInit {
     this.isAsc = !this.isAsc
   }
   randomQuestion(){
-    const index: any = Math.floor(Math.random()*this.visibleQuestions.length)
-    console.log(index);
-    console.log(this.visibleQuestions[index]);
+    this.index= Math.floor(Math.random()*this.visibleQuestions.length);
+    this.router.navigate(['/cards',this.index])
+    //console.log(index);
+    //console.log(this.visibleQuestions[index]);
   }
   
   ngOnInit(){

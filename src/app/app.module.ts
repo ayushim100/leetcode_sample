@@ -12,6 +12,7 @@ import { FormListComponent } from './discuss/form-list/form-list.component';
 import {FormService} from './discuss/shared/form.service';
 import { QuestionListComponent } from './question-list/question-list.component'
 import { QuestionService } from './discuss/shared/question.service';
+import { QuestionDetailComponent } from './question-detail/question-detail.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { QuestionService } from './discuss/shared/question.service';
     DiscussComponent,
     FormListComponent,
     QuestionListComponent,
+    QuestionDetailComponent,
   ],
   imports: [
     BrowserModule,

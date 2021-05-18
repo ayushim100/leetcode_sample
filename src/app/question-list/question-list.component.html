@@ -23,8 +23,8 @@
         <tbody class="container">
             <div class="row" *ngFor="let question of visibleQuestions">
                 <tr>
-                    <th class="table-question-id">{{question.id}}</th>
-                    <td class="table-question-title">{{question.title}}</td>
+                    <th [routerLink]="['/cards',question.id]" class="table-question-id">{{question.id}}</th>
+                    <td [routerLink]="['/cards',question.id]" class="table-question-title">{{question.title}}</td>
                     <td class="table-question-difficulty">{{question.difficulty}}</td>
                 </tr>
             </div>
