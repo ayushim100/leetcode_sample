@@ -9,7 +9,9 @@ import { DiscussComponent } from './discuss/discuss.component';
 
 import { FormsModule }   from '@angular/forms';
 import { FormListComponent } from './discuss/form-list/form-list.component';
-import {FormService} from './discuss/shared/form.service'
+import {FormService} from './discuss/shared/form.service';
+import { QuestionListComponent } from './question-list/question-list.component'
+import { QuestionService } from './discuss/shared/question.service';
 
 @NgModule({
   declarations: [
@@ -18,13 +20,17 @@ import {FormService} from './discuss/shared/form.service'
     CardsComponent,
     DiscussComponent,
     FormListComponent,
+    QuestionListComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule
   ],
-  providers: [FormService],
+  providers: [
+    FormService,
+    QuestionService
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

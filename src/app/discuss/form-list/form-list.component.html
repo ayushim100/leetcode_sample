@@ -1,6 +1,16 @@
-<div class="row" *ngFor="let form of form">
-    <div class="container">
-        <h4>{{form.title}}</h4>
-        <span>{{form.description}}</span>
-    </div>
+<h1>Create new topic</h1>
+<div class="container">
+    <form #DiscussForm="ngForm" (ngSubmit)="submit(DiscussForm.value)">
+        <div class ="title">
+            <label for="title"></label>
+            <input [(ngModel)]="title" name = "title" id="title" class="input" placeholder="Enter Topic Title...." value="">
+        </div>
+        <div class = "description">
+            <label for="description"></label>
+            <input [(ngModel)]="description" name="description" id="description" class="text-field" placeholder="Enter Description...." value="">
+        </div>
+        <button type="submit" class="btn-submit">Submit</button>
+    </form>
+    <hr>
 </div>
+<app-discuss [formValues]="filledForm" ></app-discuss>

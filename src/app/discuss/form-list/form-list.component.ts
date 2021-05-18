@@ -1,16 +1,29 @@
 import { Component, Input, OnInit } from '@angular/core';
-import {Iform} from '../shared/form.model'
+
+import { FormService } from '../shared/form.service';
+import {form} from '../shared/form.model';
+import {FORMS} from '../shared/forms';
 @Component({
   selector: 'form-list',
   templateUrl: './form-list.component.html',
   styleUrls: ['./form-list.component.scss']
 })
+
 export class FormListComponent implements OnInit {
-  @Input() form:any;
+  title!: any
+  description!: any 
+  filledForm! : form
+  form1!: form[];
+  
+  constructor(private formService: FormService) {}
 
-  constructor() {}
-
-  ngOnInit(): void {
+  ngOnInit() {
+    this.form1 = this.formService.getForms()
   }
-
+  submit(formValues:any){
+    //this.saveNewForm.emit(formValues) //after submitting box gayab
+    this.filledForm = formValues
+    this.form1.push(formValues)
+    
+  }
 }

@@ -1,0 +1,49 @@
+h1{
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 20px;
+    font-family: 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+}
+.container{
+    margin-left: 20px;
+}
+.search-box{
+    width: 175px;
+    margin-right: 5px;
+    font-size: 12px;
+    width: 100%;
+    font-weight: 300;
+}
+.input{
+    width: 275px;
+    height: 30px;
+    margin-right: 5px;
+    font-size: 20px;
+    font-weight: 300;
+    color: #546e7a;
+    border: 1px solid #cfd8dc;
+    border-radius: 3px;
+    font-weight: 300;
+    font-family: inherit;
+    margin-bottom: 5px;
+}
+.text-field{
+    width: 675px;
+    height: 70px;
+    margin-right: 5px;
+    font-size: 20px;
+    font-weight: 300;
+    color: #546e7a;
+    border: 1px solid #cfd8dc;
+    border-radius: 3px;
+    font-weight: 300;
+    font-family: inherit;
+    margin-bottom: 5px;
+}
+.btn-submit{
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    background: linear-gradient(215deg, #546e7a, #37474f);
+    color: #ffffff;
+}

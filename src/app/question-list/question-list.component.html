@@ -1,0 +1,33 @@
+<div class="input-group">
+    <div class="form-outline">
+        <input [(ngModel)]="searchTerm" name="searchTerm" type="search" id="searchTitle" class="formControl" placeholder="Search"/>
+    </div>
+    <button type="button" class="btn btn-primary" (click)="searchQuestion(searchTerm,'all')">
+        <i class="fas fa-search"></i>
+    </button>
+    <button class="btn-easy" (click)="filterQuestions('all')"> All</button>
+    <button class="btn-easy" (click)="filterQuestions('Easy')"> Easy</button>
+    <button class="btn-medium" (click)="filterQuestions('Medium')"> Medium</button>
+    <button class="btn-hard" (click)="filterQuestions('Hard')"> Hard</button>
+    <button type="button" class="btn btn-primary" (click)="randomQuestion()">Pick One</button>
+</div>
+<div class="question-container">
+    <table class="table table-striped">
+        <thead>
+            <tr class="reactable-column-header">
+                <th class="question-id">#</th>
+                <th class="question-title" (click)="sortByName()"> Title</th>
+                <th class="difficulty">Difficulty</th>
+            </tr>
+        </thead>
+        <tbody class="container">
+            <div class="row" *ngFor="let question of visibleQuestions">
+                <tr>
+                    <th class="table-question-id">{{question.id}}</th>
+                    <td class="table-question-title">{{question.title}}</td>
+                    <td class="table-question-difficulty">{{question.difficulty}}</td>
+                </tr>
+            </div>
+        </tbody>
+    </table>
+</div>

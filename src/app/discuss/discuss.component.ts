@@ -1,8 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
-import {Iform} from './shared/form.model'
+import { Component, Input, OnInit, OnChanges} from '@angular/core';
 import { FormService } from './shared/form.service';
-
-
+import {form} from './shared/form.model';
+import {FORMS} from './shared/forms';
 @Component({
   selector: 'app-discuss',
   templateUrl: './discuss.component.html',
@@ -10,17 +9,18 @@ import { FormService } from './shared/form.service';
 })
 export class DiscussComponent implements OnInit {
   title:any
-  description:any
+  description: any
+  @Input() formValues!: form ;
+
   form1!: any[];
   constructor(private formService: FormService) {
-    
    }
 
   ngOnInit(){
     this.form1 = this.formService.getForms()
   }
-  submit(formValues:any){
-    this.form1.push(formValues)
-    console.log(formValues)
+  ngOnChanges(formValues:any){
+    console.log(this.formValues)
   }
+  
 }
