@@ -3,5 +3,6 @@ export interface form{
     title: string
     time?: string
     description: string
+    author: string
     votes?: number
 }

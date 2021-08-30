@@ -1,0 +1,34 @@
+<div *ngIf="!authService.isAuthenticated()"[routerLink]="['user/login']"></div>
+<div *ngIf="authService.isAuthenticated()" class="content-wrapper">
+    <div class = "profile-side-bar">
+        <div class="ant-card-small">
+            <div class="ant-card-head">
+                <div class="ant-card-title"> Basic Profile</div>
+                <button class="btn btn-outline-secondary ant-card-extra"> Edit Profile</button>
+            </div>
+            <div class="ant-card-body">
+                <div class="user-info-wrapper">
+
+                </div>
+                <div class="user-info-extra">
+                    <li class="location"> Location</li>
+                    <li class="university"> Education</li>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <form [formGroup] ="profileForm" (ngSubmit)="saveProfile(profileForm.value)">
+            <div class="formGroup">
+                <label for ="userName">Username:</label>
+                <input formControlName="userName" id="first-name" type="text" class="form-control" placeholder="Username">
+            </div>
+            <div>
+                <label for ="password">Password:</label>
+                <input formControlName="password" id="password" type="text" class="form-control" placeholder="Password">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="button" class="btn btn-primary">Cancel</button>
+        </form>
+    </div>
+</div>

@@ -6,8 +6,11 @@
     <div class="row" *ngFor="let form of form1">
         <div class="inside-content">
             <div class="topic-title">{{form.title}}</div>
+            <span class="topic-author" (click)="getProfile(form.author)">{{form.author}}</span>
             <span class="topic-description">{{form.description}}</span>
+            <span>{{form.time}}</span>
         </div>
+        <button class="btn btn-primary btn-sm" (click)="deleteForm(form.id)" type="button">Delete</button>
     </div>
 </div>
 

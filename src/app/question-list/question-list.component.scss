@@ -1,52 +1,120 @@
-.input-group{
-    padding: 10px;
+.col-md-9{
+    width: 70%;
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    float: left;
 }
-.formControl{
+.col-md-3{
+    width: 30%;
+    float: left;
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    box-sizing: border-box;
+}
+// .input-group{
+//     padding: 10px;
+// }
+formControl{
     border-radius: 5px;
+    
 }
-.question-container{
-    padding: 10px;
-}
-.container{
-    padding: 10px;
-}
-.table-question-title{
-    width: 350px;
-    height: 36px;
-    padding-left: 20px;
-}
-.reactable-column-header{
-    width: 1000px;
-    height: 40px;
-    display: inline-block;
-}
-// .table-question-list{
-//     padding: 8px;
-//     border-bottom: 1px solid #ddd;
+// .main-container{
+//     width: 300px;
+//     padding: 20px;
 // }
-// .column-header{
-//     color: rgba(0, 0, 0, 0.65);
-//     font-size: 14px;
-//     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+// .table-container{
+//     width: 200px;
+//     float: left;
+//     padding: 20px
 // }
+// .tag-container{
+//     width: 100px;
+//     float: right;
+//     padding: 20px
+// }
+// .container{
+//     padding: 10px;
+// }
+// .table-striped{
+//     width: 200px;
+//     height: 36px;
+//     padding-left: 20px;
+// }
+// .reactable-column-header{
+//     width: 100px;
+//     height: 40px;
+//     display: inline-block;
+// }
+// // .table-question-list{
+// //     padding: 8px;
+// //     border-bottom: 1px solid #ddd;
+// // }
+// // .column-header{
+// //     color: rgba(0, 0, 0, 0.65);
+// //     font-size: 14px;
+// //     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+// // }
 
-// .question-id{
-//     padding-left: 30px;
+.question-id{
+    //padding-left: 30px;
+    width: 31px;
+}
+// .question-title{
+//     height: 50px;
+//     width: 312px;
 // }
-.question-title{
-    height: 50px;
-    width: 312px;
+.table-question-id{
+    padding: 10px;
+    width: 31px;
 }
 .table-question-title{
     color: #08c;
-    height: 50px;
-    width: 312px;
+    width: 320px;
 }
-.question-difficulty{
-    height: 56px;
-    width: 77px;
+// .question-difficulty{
+//     height: 56px;
+//     width: 77px;
+// }
+.label-Medium{
+    border-radius: 1020px;
+    background-color: #f0ad4e;
+    display: inline;
+    padding: .2em .6em .3em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
 }
-.table-question-difficulty{
-    height: 56px;
-    width: 77px;
+.label-Easy{
+    border-radius: 1020px;
+    background-color: #5cb85c;
+    display: inline;
+    padding: .2em .6em .3em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+}
+.label-Hard{
+    border-radius: 1020px;
+    background-color: #d9534f;
+    display: inline;
+    padding: .2em .6em .3em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
 }

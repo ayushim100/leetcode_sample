@@ -1,8 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit,Inject } from '@angular/core';
 
 import { FormService } from '../shared/form.service';
 import {form} from '../shared/form.model';
-import {FORMS} from '../shared/forms';
 @Component({
   selector: 'form-list',
   templateUrl: './form-list.component.html',
@@ -15,15 +14,17 @@ export class FormListComponent implements OnInit {
   filledForm! : form
   form1!: form[];
   
-  constructor(private formService: FormService) {}
+  constructor(private formService: FormService, @Inject('BaseURL') private BaseURL:string) {}
 
   ngOnInit() {
-    this.form1 = this.formService.getForms()
+    this.formService.getForms().subscribe((form)=>this.form1=form); 
   }
-  submit(formValues:any){
-    //this.saveNewForm.emit(formValues) //after submitting box gayab
+  submit(formValues:form){
+    var today = new Date();
+    formValues.time = today.getHours() + ":" + today.getMinutes();
     this.filledForm = formValues
-    this.form1.push(formValues)
-    
+    this.formService.addForm(this.filledForm).subscribe(form=>this.form1.push(form));
+    //this.form1.push(formValues)
+    //this.saveNewForm.emit(formValues) //after submitting box gayab
   }
 }

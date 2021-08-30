@@ -1,0 +1,56 @@
+{
+    "tickets":[
+        {
+            "id":"1234",
+            "buid":"1234",
+            "raisedBy":"xyz",
+            "assignee":[
+                {
+                    "id":"2345",
+                    "assignee":"abc" 
+                }
+            ],
+            "approvalStatus":"true",
+            "ticketStatus":"true",
+            "escalationStatus":"true",
+            "created":"yes",
+            "updated":"yes",
+            "attachmentInfoDTO": [
+                {
+                    "attachmentPath": "String",
+                    "comment": "String",
+                    "employee": "String",
+                    "created": "String"
+                }
+            ],
+            "changesDTO": [
+                {
+                    "changedBy": "String",
+                    "changedValue": "String",
+                    "created": "String"
+                }
+            ],
+            "sceanrioObj": {
+                "uuid": "String",
+                "category": "String",
+                "subCategory": "String",
+                "problemArea": "String",
+                "sla": 0,
+                "active": true,
+                "approver": true,
+                "defaultAssigneeDTO": {
+                    "defaultAssignee": "String",
+                    "defaultApprover": "String",
+                    "cutOff": 0,
+                    "priority": 0
+                }
+            },
+            "supportGroupInfoDTO": [
+                {
+                    "employee": "String",
+                    "level": "String"
+                }
+            ]      
+        }
+    ]
+}

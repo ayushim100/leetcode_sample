@@ -1,0 +1,19 @@
+<div class="screen-container">
+    <div class="sign-in-container">
+        <div class="container">
+            <img class = "logo" src="https://assets.leetcode.com/static_assets/public/webpack_bundles/images/logo.c36eaf5e6.svg">
+            <form class="form-container" #LoginForm="ngForm" (ngSubmit)="login(LoginForm.value)">
+                <span class="wrapper-email">
+                    <input (ngModel)="userName" id="id-login" name="userName" placeholder="Username">
+                </span>
+                <span class="wrapper-password">
+                    <input type="password" (ngModel)="password" id="id-password" name="password" placeholder="Password">
+                </span>
+                <button type="submit" class="btn btn-primary btn-lg">Sign In</button>
+            </form>
+        </div>
+    </div>
+    <div class="actions">
+    </div>
+</div>
+<!-- ngModel requires name attribute -->

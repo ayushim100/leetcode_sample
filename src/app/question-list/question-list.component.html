@@ -1,33 +1,48 @@
-<div class="input-group">
-    <div class="form-outline">
-        <input [(ngModel)]="searchTerm" name="searchTerm" type="search" id="searchTitle" class="formControl" placeholder="Search"/>
+<div class="col-md-9 blog-main">
+    <div class="input-group">
+        <div class="form-outline">
+            <input [(ngModel)]="searchTerm" name="searchTerm" type="search" id="searchTitle" class="formControl" placeholder="Search"/>
+        </div>
+        <button type="button" class="btn btn-primary" (click)="searchQuestion(searchTerm,'all')">
+            <i class="fas fa-search"></i>
+        </button>
+        <button class="btn-easy" (click)="filterQuestions('all')"> All</button>
+        <button class="btn-easy" (click)="filterQuestions('Easy')"> Easy</button>
+        <button class="btn-medium" (click)="filterQuestions('Medium')"> Medium</button>
+        <button class="btn-hard" (click)="filterQuestions('Hard')"> Hard</button>
+        <button type="button" class="btn btn-primary" (click)="randomQuestion()">Pick One</button>
     </div>
-    <button type="button" class="btn btn-primary" (click)="searchQuestion(searchTerm,'all')">
-        <i class="fas fa-search"></i>
-    </button>
-    <button class="btn-easy" (click)="filterQuestions('all')"> All</button>
-    <button class="btn-easy" (click)="filterQuestions('Easy')"> Easy</button>
-    <button class="btn-medium" (click)="filterQuestions('Medium')"> Medium</button>
-    <button class="btn-hard" (click)="filterQuestions('Hard')"> Hard</button>
-    <button type="button" class="btn btn-primary" (click)="randomQuestion()">Pick One</button>
-</div>
-<div class="question-container">
-    <table class="table table-striped">
-        <thead>
-            <tr class="reactable-column-header">
-                <th class="question-id">#</th>
-                <th class="question-title" (click)="sortByName()"> Title</th>
-                <th class="difficulty">Difficulty</th>
-            </tr>
-        </thead>
-        <tbody class="container">
-            <div class="row" *ngFor="let question of visibleQuestions">
+    <div>
+        <input type="checkbox" id="flexCheckBox" (change)="check()">
+        <label for="flexChecBox">Show problem tags</label>
+    </div>
+    <div class="main-container">
+        <table class="table table-striped table-container">
+            <thead>
+                <tr class="reactable-column-header">
+                    <th class="question-id">#</th>
+                    <th class="question-title" (click)="sortByName()"> Title</th>
+                    <th class="question-difficulty">Difficulty</th>
+                    <th class="question-tag" *ngIf = "selectedTags">Tags</th>
+                </tr>
+            </thead>
+            <tbody class="container" *ngFor="let question of visibleQuestions" >
                 <tr>
                     <th [routerLink]="['/cards',question.id]" class="table-question-id">{{question.id}}</th>
-                    <td [routerLink]="['/cards',question.id]" class="table-question-title">{{question.title}}</td>
-                    <td class="table-question-difficulty">{{question.difficulty}}</td>
+                    <th [routerLink]="['/cards',question.id]" class="table-question-title">{{question.title}}</th>
+                    <th class="table-question-difficulty"><span class="label-{{question.difficulty}}">{{question.difficulty}}</span></th>
+                    <th *ngIf = "selectedTags"><button type="button" class="btn btn primary">{{question.tags}}</button></th>
                 </tr>
-            </div>
-        </tbody>
-    </table>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="col-md-3 blog-sidebar">
+    <div class= "tag-container">
+        <div class='tag-list' *ngFor="let tag of tags">
+            <td><button type="button" class="btn btn-outline-secondary">{{tag.count}}</button></td>
+            <td><button type="button" class="btn btn-outline-secondary">{{tag.name}}</button></td>
+        </div>
+    </div>
+    <button class="btn btn-primary" (click)="showNumberOfCompletedQuestion(countCompletedQuestion())">Progress</button>
 </div>

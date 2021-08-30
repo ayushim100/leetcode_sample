@@ -5,13 +5,14 @@
         <a>Problems</a>
         <a>Interview</a>
         <a>Contest</a>
-        <a href="/discuss">Discuss</a>
+        <a [routerLink]="['/discuss']">Discuss</a>
         <a class="store">Store</a>
     </div>
     <div class = "nav-bar-right">
-        <a>Icon1</a>
+        <a *ngIf="!auth.isAuthenticated()" [routerLink]="['user/login']">Login</a>
+        <a *ngIf="auth.isAuthenticated()" [routerLink]="['user/profile']">Welcome {{auth.currentUser.userName}}</a>
         <a>Icon2</a>
-        <a>Icon3</a>
+        <a>Icon 3</a>
     </div>
 </div>
 
